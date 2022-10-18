@@ -2,6 +2,14 @@ import React from 'react'
 
 
 export default function Main() {
+
+
+    // hooks for handling state data.
+const [username, setusername] = useState('');
+const [email, setemail] = useState('');
+const [password, setpassword] = useState('');
+const [cpassword, cpassword] = useState('');
+
   return (
     <div>
        <div className="row justify-content-center">
