@@ -81,6 +81,7 @@ function validate(){
                 type="text" 
                 placeholder='email' 
                 className='form-control'
+                style={{borderColor:ecolor}}
                 value={email} 
                 onChange={(e)=>{setemail(e.target.value)}}
                 ></input>
@@ -90,6 +91,7 @@ function validate(){
                 type="text" 
                 placeholder='password' 
                 className='form-control'
+                style={{borderColor:pcolor}}
                 value={password} 
                 onChange={(e)=>{setpassword(e.target.value)}}
                 ></input>
@@ -101,6 +103,7 @@ function validate(){
                 placeholder='confirm password' 
                 className='form-control'
                 value={cpassword} 
+                style={{borderColor:cpcolor}}
                 onChange={(e)=>{setcpassword(e.target.value)}}
                 ></input>
                 <p>{ecpassword}</p>
