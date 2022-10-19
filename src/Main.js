@@ -13,32 +13,51 @@ const [eemail, seteemail] = useState('');
 const [epassword, setepassword] = useState('');
 const [ecpassword, setecpassword] = useState('');
 
-console.log(username + email + password + cpassword);
+const [ucolor, setucolor]=useState('');
+const [ecolor, setecolor] = useState('');
+const [pcolor, setpcolor] = useState('');
+const [cpcolor, setcpcolor] = useState('');
+
+
 /*
+console.log(username + email + password + cpassword);
 console.log('I am here.... Now.')
 */
 // console.log(password.indexOf('.'));
-console.log(password.indexOf('.'));
 
-console.log(password.indexOf('.')>=0 && password.length >8);
 
 function validate(){
     if(username.length > 8){
         seteusername('');
+        setucolor('#03fc30');
     } else {
         seteusername('User name must be more than 8 letters.');
+        setucolor('#fc3503');
     }
 
     if ((email.indexOf('.') >= 0 && email.indexOf('@') >= 0)===true){
         seteemail('');
+        setecolor('#03fc30');
+
     } else {
         seteemail('Please enter a valid email address.')
+        setecolor('#fc3503');
     }
 
     if ((password.indexOf('.')>=0 && password.length >8)===true){
         setepassword('');
+        setpcolor('#03fc30');
     } else {
-        setepassword('Passwords must contain a "." and be more than 8 letters.')
+        setepassword('Passwords must contain a "." and be more than 8 letters.');
+        setpcolor('#fc3503');
+    }
+
+    if(password === cpassword){
+        setecpassword('');
+        setcpcolor('#03fc30');
+    } else {
+        setecpassword('Passwords much match.')
+        setcpcolor('#fc3503');
     }
 
 };
@@ -52,6 +71,7 @@ function validate(){
                 <input type="text" 
                 placeholder='username' 
                 className='form-control' 
+                style={{borderColor:ucolor}}
                 value={username} 
                 onChange={(e)=>{setusername(e.target.value)}}
                 ></input>
