@@ -17,7 +17,10 @@ console.log(username + email + password + cpassword);
 /*
 console.log('I am here.... Now.')
 */
-// console.log(email.indexOf('@'));
+// console.log(password.indexOf('.'));
+console.log(password.indexOf('.'));
+
+console.log(password.indexOf('.')>=0 && password.length >8);
 
 function validate(){
     if(username.length > 8){
@@ -26,10 +29,16 @@ function validate(){
         seteusername('User name must be more than 8 letters.');
     }
 
-    if (email.indexOf('.') >= 0 && email.indexOf('@') >= 0 ){
+    if ((email.indexOf('.') >= 0 && email.indexOf('@') >= 0)===true){
         seteemail('');
     } else {
         seteemail('Please enter a valid email address.')
+    }
+
+    if ((password.indexOf('.')>=0 && password.length >8)===true){
+        setepassword('');
+    } else {
+        setepassword('Passwords must contain a "." and be more than 8 letters.')
     }
 
 };
