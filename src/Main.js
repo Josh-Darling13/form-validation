@@ -7,13 +7,31 @@ const [email, setemail] = useState('');
 const [password, setpassword] = useState('');
 const [cpassword, setcpassword] = useState('');
 
+    //hooks for handling errors 
+const [eusername, seteusername]=useState('');
+const [eemail, seteemail] = useState('');
+const [epassword, setepassword] = useState('');
+const [ecpassword, setecpassword] = useState('');
+
 console.log(username + email + password + cpassword);
 /*
 console.log('I am here.... Now.')
 */
+// console.log(email.indexOf('@'));
 
 function validate(){
-    console.log(username + email + password + cpassword);
+    if(username.length > 8){
+        seteusername('');
+    } else {
+        seteusername('User name must be more than 8 letters.');
+    }
+
+    if (email.indexOf('.') >= 0 && email.indexOf('@') >= 0 ){
+        seteemail('');
+    } else {
+        seteemail('Please enter a valid email address.')
+    }
+
 };
 
   return (
@@ -28,7 +46,7 @@ function validate(){
                 value={username} 
                 onChange={(e)=>{setusername(e.target.value)}}
                 ></input>
-                <p>Mush be more than 8 letters</p>
+                <p>{eusername}</p>
 
                 <input 
                 type="text" 
@@ -37,6 +55,7 @@ function validate(){
                 value={email} 
                 onChange={(e)=>{setemail(e.target.value)}}
                 ></input>
+                <p>{eemail}</p>
 
                 <input 
                 type="text" 
@@ -45,6 +64,7 @@ function validate(){
                 value={password} 
                 onChange={(e)=>{setpassword(e.target.value)}}
                 ></input>
+                <p>{epassword}</p>
 
 
                 <input 
@@ -54,6 +74,7 @@ function validate(){
                 value={cpassword} 
                 onChange={(e)=>{setcpassword(e.target.value)}}
                 ></input>
+                <p>{ecpassword}</p>
 
                 <button 
                 className='btn btn-success'
