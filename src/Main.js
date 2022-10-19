@@ -1,32 +1,29 @@
 import React, { useState } from 'react'
 
 export default function Main() {
+
     // hooks for handling form data.
-const [username, setusername]=useState('');
+const [username, setusername] = useState('');
 const [email, setemail] = useState('');
 const [password, setpassword] = useState('');
 const [cpassword, setcpassword] = useState('');
 
     //hooks for handling errors 
-const [eusername, seteusername]=useState('');
+const [eusername, seteusername] = useState('');
 const [eemail, seteemail] = useState('');
 const [epassword, setepassword] = useState('');
 const [ecpassword, setecpassword] = useState('');
 
-const [ucolor, setucolor]=useState('');
+    // hooks for updating error styling
+const [ucolor, setucolor] = useState('');
 const [ecolor, setecolor] = useState('');
 const [pcolor, setpcolor] = useState('');
 const [cpcolor, setcpcolor] = useState('');
 
-
-/*
-console.log(username + email + password + cpassword);
-console.log('I am here.... Now.')
-*/
-// console.log(password.indexOf('.'));
-
-
 function validate(){
+
+    // handlers for validation
+
     if(username.length > 8){
         seteusername('');
         setucolor('#03fc30');
@@ -59,7 +56,6 @@ function validate(){
         setecpassword('Passwords much match.')
         setcpcolor('#fc3503');
     }
-
 };
 
   return (
